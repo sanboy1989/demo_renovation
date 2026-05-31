@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinnacle Renovations — Calgary's Premier Interior Remodeling</title>
+  <meta name="description" content="Pinnacle Renovations transforms Calgary homes with precision craftsmanship and timeless design." />
+
+  <!-- Anti-flash for language -->
+  <script>(function(){var l=localStorage.getItem('pinnacle-lang');if(l==='zh')document.documentElement.classList.add('lang-zh');})();</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:'#FAFAF9', paper:'#F3F1ED', fog:'#E6E3DD',
+            ash:'#B8B4AD', muted:'#7A7672', carbon:'#3C3A38',
+            ink:'#1A1918', gold:'#C4A882'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav id="nav" class="px-8 md:px-12">
+  <div class="wrap flex items-center justify-between w-full">
+
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Pinnacle</span>
+      <span class="nav-logo-sub"><span class="t-en">Renovations · Calgary</span><span class="t-zh">卓越裝修 · 卡加利</span></span>
+    </a>
+
+    <div id="desktop-nav">
+      <a href="index.html"    class="nav-link active"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+      <a href="services.html" class="nav-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+      <a href="contact.html"  class="nav-link"><span class="t-en">Contact</span><span class="t-zh">聯絡我們</span></a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn"        data-lang="zh">中文</button>
+      </div>
+      <a href="contact.html" class="btn btn-ink" style="padding:0.6rem 1.4rem;">
+        <span class="t-en">Free Quote</span><span class="t-zh">免費報價</span>
+      </a>
+    </div>
+
+    <button class="hamburger" id="menu-toggle" aria-label="Menu">
+      <span class="hb"></span><span class="hb"></span><span class="hb" style="width:16px;"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu">
+  <button id="menu-close" class="absolute top-6 right-8" style="background:none;border:none;cursor:pointer;" aria-label="Close">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1918" stroke-width="1.2">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <a href="index.html"    class="mob-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+  <a href="services.html" class="mob-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+  <a href="contact.html"  class="mob-link"><span class="t-en">Contact</span><span class="t-zh">聯絡我們</span></a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn"        data-lang="zh">中文</button>
+  </div>
+  <a href="contact.html" class="btn btn-ink" style="margin-top:0.5rem;">
+    <span class="t-en">Free Quote</span><span class="t-zh">免費報價</span>
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     HERO — Ichi-style Ken Burns Carousel
+══════════════════════════════════════ -->
+<section class="hero" id="hero" aria-label="Hero slideshow">
+
+  <!-- ── Slides ── -->
+  <!-- Each slide has data-kb="1-4" to select which Ken Burns variant JS will apply -->
+
+  <div class="hero-slide active" data-kb="1">
+    <img
+      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=90&auto=format&fit=crop"
+      alt="Luxury kitchen renovation"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="hero-slide" data-kb="2">
+    <img
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=90&auto=format&fit=crop"
+      alt="Modern open-concept living"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="hero-slide" data-kb="3">
+    <img
+      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1800&q=90&auto=format&fit=crop"
+      alt="Spa bathroom remodel"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="hero-slide" data-kb="4">
+    <img
+      src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=1800&q=90&auto=format&fit=crop"
+      alt="Renovation craftsmanship"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- ── Overlay ── -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- ── Text content — stagger animated ── -->
+  <div class="hero-content">
+
+    <!-- 1. Location label -->
+    <p class="hero-text-item lbl" style="--d:0.25s; margin-bottom:1.75rem; color:rgba(255,255,255,0.5);">
+      <span class="t-en">Calgary, Alberta · Since 2012</span>
+      <span class="t-zh">卡加利，亞伯達省 · 創立於 2012 年</span>
+    </p>
+
+    <!-- 2. Main headline -->
+    <h1 class="hero-text-item display-xl" style="--d:0.6s; color:white; max-width:680px; margin-bottom:1.25rem;">
+      <span class="t-en">
+        Where Vision<br/>
+        <em style="font-style:italic; font-weight:300;">Becomes Home</em>
+      </span>
+      <span class="t-zh">
+        願景成家<br/>
+        <em style="font-style:normal; font-weight:300;">精工為本</em>
+      </span>
+    </h1>
+
+    <!-- 3. Tagline — each language is its own block element (avoids display:block override issue) -->
+    <p class="hero-text-item t-en" style="--d:1.0s; max-width:420px; margin-bottom:2.75rem; font-family:'Inter',sans-serif; font-size:0.875rem; font-weight:300; line-height:1.75; color:rgba(255,255,255,0.65);">
+      Calgary's trusted renovation atelier.<br/>Precision craftsmanship since 2012.
+    </p>
+    <p class="hero-text-item t-zh" style="--d:1.0s; max-width:420px; margin-bottom:2.75rem; font-family:'Noto Serif TC',serif; font-size:0.875rem; font-weight:300; line-height:2; letter-spacing:0.05em; color:rgba(255,255,255,0.65);">
+      卡加利信賴的裝修工坊<br/>精工為本，自2012年起
+    </p>
+
+    <!-- 4. Buttons -->
+    <div class="hero-text-item flex flex-wrap gap-4" style="--d:1.35s;">
+      <a href="contact.html" class="btn btn-white">
+        <span class="t-en">Free Consultation</span><span class="t-zh">免費諮詢</span>
+      </a>
+      <a href="services.html" class="btn" style="border-color:rgba(255,255,255,0.38); color:rgba(255,255,255,0.7);">
+        <span class="t-en">View Our Work</span><span class="t-zh">瀏覽作品</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ── Slide counter ── -->
+  <div class="hero-counter" aria-hidden="true">
+    <span class="hero-counter-cur" id="hero-cur">01</span>
+    <span class="hero-counter-sep">·</span>
+    <span id="hero-total">04</span>
+  </div>
+
+  <!-- ── Indicators — vertical stack on right ── -->
+  <div class="hero-inds" role="tablist" aria-label="Slide navigation">
+    <button class="hero-ind active" role="tab" aria-label="Slide 1" aria-selected="true"  data-idx="0"></button>
+    <button class="hero-ind"        role="tab" aria-label="Slide 2" aria-selected="false" data-idx="1"></button>
+    <button class="hero-ind"        role="tab" aria-label="Slide 3" aria-selected="false" data-idx="2"></button>
+    <button class="hero-ind"        role="tab" aria-label="Slide 4" aria-selected="false" data-idx="3"></button>
+  </div>
+
+  <!-- ── Scroll hint ── -->
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-lbl"><span class="t-en">Scroll</span><span class="t-zh">向下</span></span>
+    <div class="hero-scroll-line"></div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════════
+     INTRO STATEMENT
+══════════════════════════════════════ -->
+<section style="padding:7rem 0; background:var(--ivory);">
+  <div class="wrap-narrow text-center fade-in">
+    <p class="lbl" style="margin-bottom:2rem;">
+      <span class="t-en">Pinnacle Renovations · Calgary</span>
+      <span class="t-zh">卓越裝修 · 卡加利</span>
+    </p>
+    <p class="display-md" style="color:var(--carbon); line-height:1.65; font-family:'Cormorant Garamond',serif; font-weight:300;">
+      <span class="t-en"><em>A renovation atelier dedicated to transforming ordinary spaces into extraordinary homes — through precision craftsmanship, thoughtful design, and an unwavering commitment to your vision.</em></span>
+      <span class="t-zh" style="font-family:'Noto Serif TC',serif; font-size:clamp(1.2rem,2.2vw,1.7rem); font-weight:300; font-style:normal; letter-spacing:0.04em;">精工裝修工坊——以精湛工藝、用心設計，將平凡空間蛻變為非凡家居。</span>
+    </p>
+    <div class="rule rule-center" style="margin-top:2.5rem;"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ABOUT — SPLIT
+══════════════════════════════════════ -->
+<section style="background:var(--paper); overflow:hidden;">
+  <div class="grid md:grid-cols-2 items-stretch">
+
+    <div class="fade-in about-img" style="min-height:520px; position:relative;">
+      <img
+        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=85&auto=format&fit=crop"
+        alt="Precision renovation"
+        style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"
+      />
+    </div>
+
+    <div class="fade-in about-text" style="padding:6rem 4rem 6rem 5rem; display:flex; flex-direction:column; justify-content:center;">
+      <p class="lbl" style="margin-bottom:1.75rem;">
+        <span class="t-en">About Us</span><span class="t-zh">關於我們</span>
+      </p>
+      <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.5rem;">
+        <span class="t-en">Crafting Homes<br/>with Purpose</span>
+        <span class="t-zh">以初心<br/>打造有溫度的家</span>
+      </h2>
+      <div class="rule"></div>
+      <p class="body-text t-en" style="margin-bottom:1.25rem;">
+        Founded in Calgary in 2012, Pinnacle Renovations has become the city's most trusted name in residential remodeling. We believe a home should reflect your personality, serve your lifestyle, and endure through time.
+      </p>
+      <p class="body-zh t-zh" style="margin-bottom:2rem;">
+        我們自2012年在卡加利創立，由一家小型家庭企業發展成為全市最受信賴的住宅裝修品牌。我們相信，家應該反映您的個性、配合您的生活方式，並經得起時間的考驗。
+      </p>
+
+      <div class="flex gap-8 mb-8">
+        <div>
+          <div class="display-md" style="color:var(--ink); font-size:2.25rem;">500<span style="color:var(--gold);">+</span></div>
+          <p class="lbl" style="margin-top:4px;"><span class="t-en">Projects</span><span class="t-zh">完工項目</span></p>
+        </div>
+        <div class="rule-v" style="align-self:stretch;"></div>
+        <div>
+          <div class="display-md" style="color:var(--ink); font-size:2.25rem;">98<span style="color:var(--gold);">%</span></div>
+          <p class="lbl" style="margin-top:4px;"><span class="t-en">Satisfaction</span><span class="t-zh">客戶滿意度</span></p>
+        </div>
+        <div class="rule-v" style="align-self:stretch;"></div>
+        <div>
+          <div class="display-md" style="color:var(--ink); font-size:2.25rem;">12<span style="color:var(--gold);">+</span></div>
+          <p class="lbl" style="margin-top:4px;"><span class="t-en">Years</span><span class="t-zh">年業界經驗</span></p>
+        </div>
+      </div>
+
+      <a href="services.html" class="link-arrow">
+        <span class="t-en">Explore Our Services</span><span class="t-zh">探索我們的服務</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="wrap">
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 fade-in">
+      <div>
+        <p class="lbl" style="margin-bottom:1.25rem;">
+          <span class="t-en">Why Choose Us</span><span class="t-zh">為何選擇我們</span>
+        </p>
+        <h2 class="display-lg" style="color:var(--ink);">
+          <span class="t-en">The Pinnacle<br/>Difference</span>
+          <span class="t-zh">卓越之別</span>
+        </h2>
+      </div>
+      <p class="body-text t-en" style="max-width:340px;">Four pillars that elevate every project we undertake across Calgary.</p>
+      <p class="body-zh t-zh" style="max-width:340px;">四大核心優勢，讓每個項目都達到卓越標準。</p>
+    </div>
+
+    <div style="border-top:1px solid var(--fog);">
+      <div class="grid md:grid-cols-4">
+
+        <div class="fade-in" style="padding:2.5rem 2rem 2.5rem 0; border-right:1px solid var(--fog);">
+          <span class="step-num">01</span>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--ink); margin:1.25rem 0 0.75rem;">
+            <span class="t-en">Licensed &amp; Insured</span><span class="t-zh">持牌保障</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">Fully licensed Alberta contractors with comprehensive liability coverage on every project.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">持有亞伯達省全套執照，每個項目均備有全面責任保險。</p>
+        </div>
+
+        <div class="fade-in" style="padding:2.5rem 2rem; border-right:1px solid var(--fog);">
+          <span class="step-num">02</span>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--ink); margin:1.25rem 0 0.75rem;">
+            <span class="t-en">On-Time Delivery</span><span class="t-zh">準時交付</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">Realistic timelines, honoured without exception. Your schedule is as important as your design.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">制定切實可行的時間表並嚴格遵守。您的行程安排是我們的首要考量。</p>
+        </div>
+
+        <div class="fade-in" style="padding:2.5rem 2rem; border-right:1px solid var(--fog);">
+          <span class="step-num">03</span>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--ink); margin:1.25rem 0 0.75rem;">
+            <span class="t-en">Transparent Pricing</span><span class="t-zh">透明收費</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">Detailed written quotes, zero hidden fees. What we quote is precisely what you pay.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">書面詳細報價，絕無隱藏費用。我們報多少，您付多少。</p>
+        </div>
+
+        <div class="fade-in" style="padding:2.5rem 0 2.5rem 2rem;">
+          <span class="step-num">04</span>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--ink); margin:1.25rem 0 0.75rem;">
+            <span class="t-en">2-Year Warranty</span><span class="t-zh">兩年質保</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">All workmanship backed by our comprehensive two-year warranty for complete peace of mind.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">所有施工工程均受我們全面兩年質保保障，讓您安心無憂。</p>
+        </div>
+
+      </div>
+      <div style="border-top:1px solid var(--fog);"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SELECTED WORK — B/A GRID
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--paper);">
+  <div class="wrap">
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 fade-in">
+      <div>
+        <p class="lbl" style="margin-bottom:1.25rem;">
+          <span class="t-en">Selected Work</span><span class="t-zh">精選案例</span>
+        </p>
+        <h2 class="display-lg" style="color:var(--ink);">
+          <span class="t-en">Recent<br/>Transformations</span>
+          <span class="t-zh">近期<br/>改造案例</span>
+        </h2>
+      </div>
+      <div style="text-align:right;">
+        <p class="lbl" style="margin-bottom:0.75rem; color:var(--ash);">
+          <span class="t-en">Tap image to compare</span><span class="t-zh">點擊圖片對比前後</span>
+        </p>
+        <a href="services.html" class="link-arrow" style="justify-content:flex-end;">
+          <span class="t-en">Full Portfolio</span><span class="t-zh">完整作品集</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-px" style="background:var(--fog);">
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=75&auto=format&fit=crop" alt="Kitchen before" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=75&auto=format&fit=crop" alt="Kitchen after" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.5rem 1.25rem;">
+          <p class="lbl" style="margin-bottom:0.5rem;"><span class="t-en">Kitchen Renovation</span><span class="t-zh">廚房翻新</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Custom cabinetry, quartz island, open-concept.</span><span class="t-zh">訂製木柜、石英石廚島、開放式設計。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=75&auto=format&fit=crop" alt="Bathroom before" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=75&auto=format&fit=crop" alt="Bathroom after" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.5rem 1.25rem;">
+          <p class="lbl" style="margin-bottom:0.5rem;"><span class="t-en">Spa Ensuite</span><span class="t-zh">水療套廁</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Heated floors, freestanding tub, marble tile.</span><span class="t-zh">暖地板、獨立浴缸、全身雲石磁磚。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=75&auto=format&fit=crop" alt="Living room before" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=75&auto=format&fit=crop" alt="Living room after" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.5rem 1.25rem;">
+          <p class="lbl" style="margin-bottom:0.5rem;"><span class="t-en">Open Living Space</span><span class="t-zh">開放式客廳</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Wall removal, hardwood, fireplace wall.</span><span class="t-zh">拆牆、實木地板、壁爐特色牆。</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TESTIMONIAL — PULL QUOTE
+══════════════════════════════════════ -->
+<section class="section-lg" style="background:var(--ivory);">
+  <div class="wrap-narrow text-center fade-in">
+    <div class="quote-mark" style="margin-bottom:1rem;">"</div>
+    <blockquote class="display-md" style="color:var(--carbon); font-style:italic; line-height:1.65; margin-bottom:2.5rem;">
+      <span class="t-en">Pinnacle transformed our outdated kitchen into something out of a design magazine. Professional, punctual, and the quality exceeded every expectation we had.</span>
+      <span class="t-zh" style="font-style:normal; font-family:'Noto Serif TC',serif; font-size:clamp(1.2rem,2vw,1.6rem); letter-spacing:0.03em;">Pinnacle 將我們過時的廚房完全改造成設計雜誌的樣子。專業、準時，完工品質遠超所有期望。</span>
+    </blockquote>
+    <div class="rule rule-center"></div>
+    <p class="lbl" style="margin-top:1.5rem; letter-spacing:0.22em;">
+      <span class="t-en">Sarah &amp; Michael T. — NW Calgary · Kitchen Renovation</span>
+      <span class="t-zh">Sarah &amp; Michael T. — 卡加利西北區 · 廚房翻新</span>
+    </p>
+    <p class="lbl" style="margin-top:0.625rem; color:var(--gold); letter-spacing:0.3em;">★ ★ ★ ★ ★</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FULL-WIDTH INTERLUDE IMAGE
+══════════════════════════════════════ -->
+<div style="height:55vh; min-height:360px; overflow:hidden;">
+  <img
+    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=80&auto=format&fit=crop"
+    alt=""
+    aria-hidden="true"
+    style="width:100%; height:100%; object-fit:cover;"
+  />
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CTA — DARK
+══════════════════════════════════════ -->
+<section class="section-lg" style="background:var(--ink);">
+  <div class="wrap-narrow text-center fade-in">
+    <p class="lbl" style="color:rgba(255,255,255,0.28); margin-bottom:2rem;">
+      <span class="t-en">Begin Your Transformation</span>
+      <span class="t-zh">開始您的改造</span>
+    </p>
+    <h2 class="display-xl" style="color:white; margin-bottom:1.5rem;">
+      <span class="t-en">Your Dream Home<br/><em style="font-style:italic;">Awaits</em></span>
+      <span class="t-zh">夢想家居<br/><em style="font-style:normal;">近在咫尺</em></span>
+    </h2>
+    <div class="rule rule-center rule-white" style="margin-bottom:2.5rem;"></div>
+    <p class="body-text t-en" style="color:rgba(255,255,255,0.4); max-width:400px; margin:0 auto 2.5rem;">
+      Book your free consultation today. No obligation — just a conversation about what's possible.
+    </p>
+    <p class="body-zh t-zh" style="color:rgba(255,255,255,0.4); max-width:400px; margin:0 auto 2.5rem; line-height:2;">
+      立即預約免費諮詢。無需任何承諾——只是一次關於您家居無限可能的輕鬆對話。
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html" class="btn btn-white">
+        <span class="t-en">Free Consultation</span><span class="t-zh">免費諮詢</span>
+      </a>
+      <a href="tel:+14031234567" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.48);">
+        <span class="t-en">(403) 123-4567</span><span class="t-zh">致電 (403) 123-4567</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer style="padding:4rem 0 2.5rem; border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="wrap">
+    <div class="grid md:grid-cols-3 gap-12 mb-10">
+
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.125rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:white; margin-bottom:4px;">Pinnacle Renovations</div>
+        <div style="font-family:'Inter',sans-serif; font-size:0.4375rem; font-weight:500; letter-spacing:0.42em; text-transform:uppercase; color:rgba(255,255,255,0.22); margin-bottom:1.25rem;"><span class="t-en">Renovations · Calgary, Alberta</span><span class="t-zh">卓越裝修 · 卡加利</span></div>
+        <p class="body-text t-en" style="color:rgba(255,255,255,0.28); font-size:0.8125rem;">Transforming Calgary homes since 2012.</p>
+        <p class="body-zh t-zh" style="color:rgba(255,255,255,0.28); font-size:0.8125rem; line-height:1.9;">自2012年改造卡加利家居。</p>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <p class="lbl" style="color:rgba(255,255,255,0.18); margin-bottom:0.25rem;"><span class="t-en">Pages</span><span class="t-zh">頁面</span></p>
+        <a href="index.html"    class="footer-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+        <a href="services.html" class="footer-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+        <a href="contact.html"  class="footer-link"><span class="t-en">Contact Us</span><span class="t-zh">聯絡我們</span></a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <p class="lbl" style="color:rgba(255,255,255,0.18); margin-bottom:0.25rem;"><span class="t-en">Contact</span><span class="t-zh">聯絡資訊</span></p>
+        <a href="tel:+14031234567" class="footer-link">(403) 123-4567</a>
+        <a href="mailto:info@pinnaclerenovations.ca" class="footer-link">info@pinnaclerenovations.ca</a>
+        <span class="footer-link" style="cursor:default;">123 Renovation Way SW, Calgary</span>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.07); padding-top:1.75rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+      <span style="font-family:'Inter',sans-serif; font-size:0.6875rem; font-weight:300; color:rgba(255,255,255,0.18); letter-spacing:0.05em;">
+        <span class="t-en">© 2024 Pinnacle Renovations Ltd. All rights reserved.</span>
+        <span class="t-zh">© 2024 Pinnacle Renovations Ltd. 版權所有</span>
+      </span>
+      <div class="flex gap-6">
+        <a href="#" class="footer-link" style="font-size:0.6875rem;"><span class="t-en">Privacy</span><span class="t-zh">私隱政策</span></a>
+        <a href="#" class="footer-link" style="font-size:0.6875rem;"><span class="t-en">Terms</span><span class="t-zh">服務條款</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════ -->
+<script src="lang.js"></script>
+<script>
+/* ── Desktop nav visibility handled by CSS media query ── */
+
+/* ── Nav: always scrolled (dark text), heavier blur after scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () =>
+  nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+/* ── Mobile menu ── */
+document.getElementById('menu-toggle').addEventListener('click', () =>
+  document.getElementById('mobile-menu').classList.toggle('open'));
+document.getElementById('menu-close').addEventListener('click', () =>
+  document.getElementById('mobile-menu').classList.remove('open'));
+document.querySelectorAll('#mobile-menu a').forEach(a =>
+  a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open')));
+
+
+/* ══════════════════════════════════════
+   HERO CAROUSEL — Ken Burns + Crossfade
+══════════════════════════════════════ */
+(function () {
+  const slides   = Array.from(document.querySelectorAll('.hero-slide'));
+  const inds     = Array.from(document.querySelectorAll('.hero-ind'));
+  const curEl    = document.getElementById('hero-cur');
+  const heroEl   = document.getElementById('hero');
+
+  const KB_NAMES    = ['kb1', 'kb2', 'kb3', 'kb4'];
+  const KB_DUR      = 10000;    // 10s — Ken Burns duration (longer than display so it never snaps)
+  const SLIDE_DUR   = 8000;     // 8s — time before next slide starts fading in
+  const TOTAL       = slides.length;
+
+  let current = 0;
+  let timer   = null;
+
+  /* ── Start Ken Burns on a slide ── */
+  function startKB(slide) {
+    const img = slide.querySelector('img');
+    const kb  = slide.dataset.kb || '1';
+    // Reset: remove animation, force reflow, re-apply
+    img.style.animation = 'none';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        img.style.animation = `${KB_NAMES[(parseInt(kb) - 1) % 4]} ${KB_DUR}ms ease-in-out forwards`;
+      });
+    });
+  }
+
+  /* ── Transition to slide n ── */
+  function goTo(n) {
+    if (n === current) return;
+
+    // Deactivate current (CSS transition: opacity → 0)
+    slides[current].classList.remove('active');
+
+    // Activate next (CSS transition: opacity → 1, z-index bumps)
+    current = n;
+    slides[current].classList.add('active');
+    startKB(slides[current]);
+
+    // Update indicators
+    inds.forEach((ind, i) => {
+      ind.classList.toggle('active', i === current);
+      ind.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+
+    // Update counter
+    if (curEl) curEl.textContent = String(current + 1).padStart(2, '0');
+  }
+
+  /* ── Auto-advance ── */
+  function startTimer() {
+    timer = setInterval(() => goTo((current + 1) % TOTAL), SLIDE_DUR);
+  }
+  function stopTimer() { clearInterval(timer); }
+
+  /* ── Indicator clicks ── */
+  inds.forEach((ind, i) => {
+    ind.addEventListener('click', () => {
+      stopTimer();
+      goTo(i);
+      startTimer();
+    });
+  });
+
+  /* ── Pause on hover / resume on leave ── */
+  heroEl.addEventListener('mouseenter', stopTimer);
+  heroEl.addEventListener('mouseleave', startTimer);
+
+  /* ── Touch swipe support ── */
+  let touchStartX = 0;
+  heroEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  heroEl.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) {
+      stopTimer();
+      goTo(dx < 0 ? (current + 1) % TOTAL : (current - 1 + TOTAL) % TOTAL);
+      startTimer();
+    }
+  }, { passive: true });
+
+  /* ── Init: start KB on first slide ── */
+  startKB(slides[0]);
+  startTimer();
+
+})();
+
+
+/* ════════════════════════════════════════
+   BEFORE / AFTER TOGGLE
+════════════════════════════════════════ */
+function toggleBA(el) {
+  el.classList.toggle('after');
+  const isAfter = el.classList.contains('after');
+  const lbl = el.querySelector('.ba-label');
+  if (lbl) lbl.innerHTML = isAfter
+    ? '<span class="t-en">After</span><span class="t-zh">改造後</span>'
+    : '<span class="t-en">Before</span><span class="t-zh">改造前</span>';
+}
+
+
+/* ════════════════════════════════════════
+   SCROLL FADE-IN
+════════════════════════════════════════ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

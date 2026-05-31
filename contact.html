@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Pinnacle Renovations Calgary</title>
+  <meta name="description" content="Book your free renovation consultation with Pinnacle Renovations in Calgary." />
+
+  <script>(function(){var l=localStorage.getItem('pinnacle-lang');if(l==='zh')document.documentElement.classList.add('lang-zh');})();</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:'#FAFAF9', paper:'#F3F1ED', fog:'#E6E3DD',
+            ash:'#B8B4AD', muted:'#7A7672', carbon:'#3C3A38',
+            ink:'#1A1918', gold:'#C4A882'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    #form-success { display:none; padding:1.75rem 0; border-top:1px solid var(--fog); margin-top:2rem; }
+    #form-success.show { display:block; }
+    .info-icon { width:40px; height:40px; border:1px solid var(--fog); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .hours-row { display:flex; justify-content:space-between; padding:.75rem 0; border-bottom:1px solid var(--fog); font-family:'Inter',sans-serif; font-size:0.875rem; font-weight:300; color:var(--muted); }
+    .hours-row:last-child { border-bottom:none; }
+    .hours-row.today { color:var(--ink); }
+    .hours-row.today .day-name { font-weight:400; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" class="px-8 md:px-12 scrolled">
+  <div class="wrap flex items-center justify-between w-full">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Pinnacle</span>
+      <span class="nav-logo-sub"><span class="t-en">Renovations · Calgary</span><span class="t-zh">卓越裝修 · 卡加利</span></span>
+    </a>
+    <div id="desktop-nav">
+      <a href="index.html" class="nav-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+      <a href="services.html" class="nav-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+      <a href="contact.html" class="nav-link active"><span class="t-en">Contact</span><span class="t-zh">聯絡我們</span></a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+      <a href="contact.html" class="btn btn-ink" style="padding:0.6rem 1.4rem;">
+        <span class="t-en">Free Quote</span><span class="t-zh">免費報價</span>
+      </a>
+    </div>
+    <button class="hamburger" id="menu-toggle" aria-label="Menu">
+      <span class="hb"></span><span class="hb"></span><span class="hb" style="width:16px;"></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <button id="menu-close" class="absolute top-6 right-8" style="background:none;border:none;cursor:pointer;" aria-label="Close">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1918" stroke-width="1.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="index.html" class="mob-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+  <a href="services.html" class="mob-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+  <a href="contact.html" class="mob-link"><span class="t-en">Contact</span><span class="t-zh">聯絡我們</span></a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+  </div>
+  <a href="contact.html" class="btn btn-ink" style="margin-top:0.5rem;">
+    <span class="t-en">Free Quote</span><span class="t-zh">免費報價</span>
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE HEADER
+══════════════════════════════════════ -->
+<header style="padding-top:10rem; padding-bottom:5rem; background:var(--paper);">
+  <div class="wrap">
+    <div class="grid md:grid-cols-2 gap-12 items-end">
+      <div>
+        <p class="lbl" style="margin-bottom:1.5rem;">
+          <span class="t-en">Contact Us</span>
+          <span class="t-zh">聯絡我們</span>
+        </p>
+        <h1 class="display-xl" style="color:var(--ink);">
+          <span class="t-en">Let's Build<br/><em>Something Great</em></span>
+          <span class="t-zh">攜手共創<br/><em style="font-style:normal;">非凡家居</em></span>
+        </h1>
+      </div>
+      <div>
+        <div class="rule" style="margin-bottom:1.5rem;"></div>
+        <p class="body-text t-en">Every remarkable renovation begins with a conversation. Fill out the form below or reach us directly — we respond within one business day.</p>
+        <p class="body-zh t-zh">每次卓越改造都始於一次對話。填寫下方表格或直接聯絡我們——我們將在一個工作日內回覆。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     FORM + INFO
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="wrap">
+    <div class="grid lg:grid-cols-5 gap-20">
+
+      <!-- FORM — 3 cols -->
+      <div class="lg:col-span-3 fade-in">
+        <p class="lbl" style="margin-bottom:2.5rem;">
+          <span class="t-en">Request a Free Consultation</span>
+          <span class="t-zh">申請免費諮詢</span>
+        </p>
+
+        <form id="contact-form" novalidate>
+
+          <!-- Name -->
+          <div class="grid sm:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label class="field-label" for="fname">
+                <span class="t-en">First Name *</span><span class="t-zh">名字 *</span>
+              </label>
+              <input type="text" id="fname" name="fname" class="field" required />
+            </div>
+            <div>
+              <label class="field-label" for="lname">
+                <span class="t-en">Last Name *</span><span class="t-zh">姓氏 *</span>
+              </label>
+              <input type="text" id="lname" name="lname" class="field" required />
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="grid sm:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label class="field-label" for="email">
+                <span class="t-en">Email Address *</span><span class="t-zh">電郵地址 *</span>
+              </label>
+              <input type="email" id="email" name="email" class="field" required />
+            </div>
+            <div>
+              <label class="field-label" for="phone">
+                <span class="t-en">Phone Number</span><span class="t-zh">電話號碼</span>
+              </label>
+              <input type="tel" id="phone" name="phone" class="field" />
+            </div>
+          </div>
+
+          <!-- Service -->
+          <div class="mb-8">
+            <label class="field-label" for="service">
+              <span class="t-en">Service Interested In *</span><span class="t-zh">感興趣的服務 *</span>
+            </label>
+            <select id="service" name="service" class="field" required>
+              <option value="" disabled selected data-en="Select a service…" data-zh="請選擇服務項目……">Select a service…</option>
+              <option value="kitchen"  data-en="Kitchen Renovation"       data-zh="廚房翻新">Kitchen Renovation</option>
+              <option value="bathroom" data-en="Bathroom Remodel"         data-zh="浴室改造">Bathroom Remodel</option>
+              <option value="basement" data-en="Basement Development"     data-zh="地下室開發">Basement Development</option>
+              <option value="fullhome" data-en="Full Home Renovation"     data-zh="整屋翻新">Full Home Renovation</option>
+              <option value="flooring" data-en="Flooring"                 data-zh="地板安裝">Flooring</option>
+              <option value="painting" data-en="Painting &amp; Finishing" data-zh="油漆及修飾">Painting &amp; Finishing</option>
+              <option value="other"    data-en="Other / Not Sure"         data-zh="其他 / 尚未確定">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <!-- Budget + Timeline -->
+          <div class="grid sm:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label class="field-label" for="budget">
+                <span class="t-en">Approximate Budget</span><span class="t-zh">預算範圍</span>
+              </label>
+              <select id="budget" name="budget" class="field">
+                <option value="" disabled selected data-en="Select…" data-zh="請選擇……">Select…</option>
+                <option value="u25"   data-en="Under $25,000"       data-zh="$25,000 以下">Under $25,000</option>
+                <option value="25-50" data-en="$25,000 – $50,000"   data-zh="$25,000 – $50,000">$25,000 – $50,000</option>
+                <option value="50-1"  data-en="$50,000 – $100,000"  data-zh="$50,000 – $100,000">$50,000 – $100,000</option>
+                <option value="100+"  data-en="$100,000+"            data-zh="$100,000 以上">$100,000+</option>
+                <option value="ns"    data-en="Not sure yet"         data-zh="暫時未定">Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="timeline">
+                <span class="t-en">Desired Start</span><span class="t-zh">期望開工時間</span>
+              </label>
+              <select id="timeline" name="timeline" class="field">
+                <option value="" disabled selected data-en="When to start?" data-zh="何時開始？">When to start?</option>
+                <option value="asap" data-en="As soon as possible" data-zh="越快越好">As soon as possible</option>
+                <option value="1-3"  data-en="1–3 months"          data-zh="1–3 個月內">1–3 months</option>
+                <option value="3-6"  data-en="3–6 months"          data-zh="3–6 個月內">3–6 months</option>
+                <option value="6+"   data-en="6+ months"           data-zh="6 個月以上">6+ months</option>
+                <option value="plan" data-en="Just planning"       data-zh="初步了解">Just planning</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="mb-10">
+            <label class="field-label" for="message">
+              <span class="t-en">Tell Us About Your Project *</span>
+              <span class="t-zh">描述您的項目 *</span>
+            </label>
+            <textarea id="message" name="message" class="field" rows="5" style="resize:vertical;" required></textarea>
+          </div>
+
+          <!-- Consent -->
+          <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:2.5rem;">
+            <input type="checkbox" id="consent" name="consent" required
+              style="width:14px; height:14px; min-width:14px; margin-top:3px; accent-color:var(--ink); cursor:pointer; flex-shrink:0;" />
+            <label for="consent" style="font-family:'Inter',sans-serif; font-size:0.8125rem; font-weight:300; color:var(--muted); line-height:1.7; cursor:pointer;">
+              <span class="t-en">I agree to be contacted by Pinnacle Renovations regarding my inquiry. Your information is kept private and never shared.</span>
+              <span class="t-zh">我同意 Pinnacle Renovations 就我的查詢與我聯絡。您的個人資料將被保密，絕不對外分享。</span>
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-ink" style="width:100%; padding:1.125rem 2rem; font-size:0.5625rem;">
+            <span class="t-en">Submit Request</span>
+            <span class="t-zh">提交查詢</span>
+          </button>
+
+          <!-- Error -->
+          <div id="form-error" style="display:none; margin-top:1.25rem;">
+            <p style="font-family:'Inter',sans-serif; font-size:0.8125rem; font-weight:300; color:#9B4040;">
+              <span class="t-en">Please complete all required fields.</span>
+              <span class="t-zh">請填寫所有必填項目。</span>
+            </p>
+          </div>
+
+          <!-- Success -->
+          <div id="form-success">
+            <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; color:var(--ink); margin-bottom:0.5rem;">
+              <span class="t-en">Thank you.</span>
+              <span class="t-zh">感謝您。</span>
+            </p>
+            <p class="body-text">
+              <span class="t-en">We've received your request and will be in touch within one business day.</span>
+              <span class="t-zh">我們已收到您的查詢，將在一個工作日內與您聯絡。</span>
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- INFO — 2 cols -->
+      <div class="lg:col-span-2 fade-in">
+        <p class="lbl" style="margin-bottom:2.5rem;">
+          <span class="t-en">Reach Us</span>
+          <span class="t-zh">聯絡資訊</span>
+        </p>
+
+        <!-- Info items -->
+        <div style="display:flex; flex-direction:column; gap:0;">
+
+          <div style="padding:1.75rem 0; border-bottom:1px solid var(--fog); display:flex; gap:1.25rem; align-items:flex-start;">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="lbl" style="margin-bottom:0.5rem;"><span class="t-en">Phone</span><span class="t-zh">電話</span></p>
+              <a href="tel:+14031234567" style="font-family:'Cormorant Garamond',serif;font-size:1.625rem;font-weight:300;color:var(--ink);letter-spacing:0.02em;">(403) 123-4567</a>
+              <p class="body-text" style="font-size:0.8125rem; margin-top:0.25rem;">
+                <span class="t-en">Mon–Fri 8AM–6PM</span>
+                <span class="t-zh">週一至五 上午8時 – 下午6時</span>
+              </p>
+            </div>
+          </div>
+
+          <div style="padding:1.75rem 0; border-bottom:1px solid var(--fog); display:flex; gap:1.25rem; align-items:flex-start;">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="lbl" style="margin-bottom:0.5rem;"><span class="t-en">Email</span><span class="t-zh">電郵</span></p>
+              <a href="mailto:info@pinnaclerenovations.ca" style="font-family:'Inter',sans-serif;font-size:0.9375rem;font-weight:300;color:var(--ink);">info@pinnaclerenovations.ca</a>
+              <p class="body-text" style="font-size:0.8125rem; margin-top:0.25rem;">
+                <span class="t-en">We respond within 24 hours</span>
+                <span class="t-zh">24 小時內回覆</span>
+              </p>
+            </div>
+          </div>
+
+          <div style="padding:1.75rem 0; border-bottom:1px solid var(--fog); display:flex; gap:1.25rem; align-items:flex-start;">
+            <div class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="lbl" style="margin-bottom:0.5rem;">
+                <span class="t-en">Office &amp; Showroom</span>
+                <span class="t-zh">辦公室及展廳</span>
+              </p>
+              <p style="font-family:'Inter',sans-serif;font-size:0.9375rem;font-weight:300;color:var(--ink);line-height:1.6;">123 Renovation Way SW<br/>Calgary, AB T2P 1A1</p>
+              <p class="body-text" style="font-size:0.8125rem; margin-top:0.25rem;">
+                <span class="t-en">By appointment only</span>
+                <span class="t-zh">需預約參觀</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Business Hours -->
+        <div style="margin-top:2.5rem;">
+          <p class="lbl" style="margin-bottom:1.25rem;">
+            <span class="t-en">Hours</span>
+            <span class="t-zh">營業時間</span>
+          </p>
+          <div id="hours-table">
+            <div class="hours-row" data-day="1">
+              <span class="day-name"><span class="t-en">Monday</span><span class="t-zh">星期一</span></span>
+              <span><span class="t-en">8:00 AM – 6:00 PM</span><span class="t-zh">上午8時 – 下午6時</span></span>
+            </div>
+            <div class="hours-row" data-day="2">
+              <span class="day-name"><span class="t-en">Tuesday</span><span class="t-zh">星期二</span></span>
+              <span><span class="t-en">8:00 AM – 6:00 PM</span><span class="t-zh">上午8時 – 下午6時</span></span>
+            </div>
+            <div class="hours-row" data-day="3">
+              <span class="day-name"><span class="t-en">Wednesday</span><span class="t-zh">星期三</span></span>
+              <span><span class="t-en">8:00 AM – 6:00 PM</span><span class="t-zh">上午8時 – 下午6時</span></span>
+            </div>
+            <div class="hours-row" data-day="4">
+              <span class="day-name"><span class="t-en">Thursday</span><span class="t-zh">星期四</span></span>
+              <span><span class="t-en">8:00 AM – 6:00 PM</span><span class="t-zh">上午8時 – 下午6時</span></span>
+            </div>
+            <div class="hours-row" data-day="5">
+              <span class="day-name"><span class="t-en">Friday</span><span class="t-zh">星期五</span></span>
+              <span><span class="t-en">8:00 AM – 5:00 PM</span><span class="t-zh">上午8時 – 下午5時</span></span>
+            </div>
+            <div class="hours-row" data-day="6">
+              <span class="day-name"><span class="t-en">Saturday</span><span class="t-zh">星期六</span></span>
+              <span><span class="t-en">9:00 AM – 3:00 PM</span><span class="t-zh">上午9時 – 下午3時</span></span>
+            </div>
+            <div class="hours-row" data-day="0">
+              <span class="day-name"><span class="t-en">Sunday</span><span class="t-zh">星期日</span></span>
+              <span style="color:var(--ash);"><span class="t-en">Closed</span><span class="t-zh">休息</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Credentials -->
+        <div style="margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:0.625rem;">
+          <span style="font-family:'Inter',sans-serif;font-size:0.5625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 0.875rem;border:1px solid var(--fog);color:var(--muted);">Alberta Licensed</span>
+          <span style="font-family:'Inter',sans-serif;font-size:0.5625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 0.875rem;border:1px solid var(--fog);color:var(--muted);">BBB Accredited</span>
+          <span style="font-family:'Inter',sans-serif;font-size:0.5625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 0.875rem;border:1px solid var(--fog);color:var(--muted);">WCB Insured</span>
+          <span style="font-family:'Inter',sans-serif;font-size:0.5625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;padding:0.4rem 0.875rem;border:1px solid var(--fog);color:var(--gold);">HomeStars ★ 9.8</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     MAP
+══════════════════════════════════════ -->
+<section style="background:var(--paper);">
+  <div class="wrap" style="padding-top:5rem; padding-bottom:3rem;">
+    <p class="lbl" style="margin-bottom:1rem; text-align:center;">
+      <span class="t-en">Find Us</span>
+      <span class="t-zh">我們的位置</span>
+    </p>
+    <h2 class="display-lg text-center" style="color:var(--ink); margin-bottom:0.75rem;">
+      <span class="t-en">Our Location</span>
+      <span class="t-zh">辦公室地址</span>
+    </h2>
+    <p class="body-text text-center" style="margin-bottom:3rem;">123 Renovation Way SW, Calgary, AB T2P 1A1</p>
+  </div>
+  <div style="height:460px; width:100%; overflow:hidden;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80737.86283716878!2d-114.18988!3d51.0447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d3bb1b652b63a!2sCalgary%2C%20AB!5e0!3m2!1sen!2sca!4v1700000000000"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Pinnacle Renovations Calgary"
+      style="width:100%;height:100%;border:0;filter:grayscale(30%) contrast(1.05);"></iframe>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SERVICE AREA
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="wrap">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <p class="lbl" style="margin-bottom:1.25rem;">
+          <span class="t-en">Service Area</span>
+          <span class="t-zh">服務範圍</span>
+        </p>
+        <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+          <span class="t-en">We Serve All of Calgary</span>
+          <span class="t-zh">服務卡加利全市</span>
+        </h2>
+        <div class="rule"></div>
+        <p class="body-text t-en" style="margin-bottom:1.5rem;">From Tuscany to Mahogany, Beltline to Panorama Hills — and beyond to Cochrane, Airdrie, and Okotoks.</p>
+        <p class="body-zh t-zh" style="margin-bottom:1.5rem;">從 Tuscany 到 Mahogany，從市中心到 Panorama Hills，亦服務 Cochrane、Airdrie 及 Okotoks 等周邊地區。</p>
+        <a href="#contact-form" class="btn btn-ink" onclick="setTimeout(()=>document.getElementById('fname').focus(),200)">
+          <span class="t-en">Book a Consultation</span>
+          <span class="t-zh">預約免費諮詢</span>
+        </a>
+      </div>
+      <div class="fade-in">
+        <div class="grid grid-cols-3 gap-px" style="background:var(--fog);">
+          <div style="background:var(--ivory);padding:1.25rem;">
+            <p class="lbl" style="font-size:0.5rem;margin-bottom:0.5rem;"><span class="t-en">NW Calgary</span><span class="t-zh">西北區</span></p>
+            <p class="body-text" style="font-size:0.75rem;">Tuscany<br/>Varsity<br/>Panorama Hills</p>
+          </div>
+          <div style="background:var(--ivory);padding:1.25rem;">
+            <p class="lbl" style="font-size:0.5rem;margin-bottom:0.5rem;"><span class="t-en">NE Calgary</span><span class="t-zh">東北區</span></p>
+            <p class="body-text" style="font-size:0.75rem;">Bridgeland<br/>Marlborough<br/>Skyview Ranch</p>
+          </div>
+          <div style="background:var(--ivory);padding:1.25rem;">
+            <p class="lbl" style="font-size:0.5rem;margin-bottom:0.5rem;"><span class="t-en">SW Calgary</span><span class="t-zh">西南區</span></p>
+            <p class="body-text" style="font-size:0.75rem;">Aspen<br/>Killarney<br/>Signal Hill</p>
+          </div>
+          <div style="background:var(--ivory);padding:1.25rem;">
+            <p class="lbl" style="font-size:0.5rem;margin-bottom:0.5rem;"><span class="t-en">SE Calgary</span><span class="t-zh">東南區</span></p>
+            <p class="body-text" style="font-size:0.75rem;">Mahogany<br/>Auburn Bay<br/>Cranston</p>
+          </div>
+          <div style="background:var(--ivory);padding:1.25rem;">
+            <p class="lbl" style="font-size:0.5rem;margin-bottom:0.5rem;"><span class="t-en">Downtown</span><span class="t-zh">市中心</span></p>
+            <p class="body-text" style="font-size:0.75rem;">Beltline<br/>Mission<br/>Inglewood</p>
+          </div>
+          <div style="background:var(--ivory);padding:1.25rem;">
+            <p class="lbl" style="font-size:0.5rem;margin-bottom:0.5rem;"><span class="t-en">Surrounding</span><span class="t-zh">周邊地區</span></p>
+            <p class="body-text" style="font-size:0.75rem;">Cochrane<br/>Airdrie<br/>Okotoks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="padding:4rem 0 2.5rem; border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="wrap">
+    <div class="grid md:grid-cols-3 gap-12 mb-10">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.125rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:white;margin-bottom:4px;">Pinnacle Renovations</div>
+        <div style="font-family:'Inter',sans-serif;font-size:0.4375rem;font-weight:500;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1rem;"><span class="t-en">Renovations · Calgary, Alberta</span><span class="t-zh">卓越裝修 · 卡加利</span></div>
+        <p class="body-text t-en" style="color:rgba(255,255,255,0.28);font-size:0.8125rem;">Transforming Calgary homes since 2012.</p>
+        <p class="body-zh t-zh" style="color:rgba(255,255,255,0.28);font-size:0.8125rem;line-height:1.9;">自2012年改造卡加利家居。</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="lbl" style="color:rgba(255,255,255,0.18);margin-bottom:0.25rem;"><span class="t-en">Pages</span><span class="t-zh">頁面</span></p>
+        <a href="index.html" class="footer-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+        <a href="services.html" class="footer-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+        <a href="contact.html" class="footer-link"><span class="t-en">Contact Us</span><span class="t-zh">聯絡我們</span></a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="lbl" style="color:rgba(255,255,255,0.18);margin-bottom:0.25rem;"><span class="t-en">Contact</span><span class="t-zh">聯絡資訊</span></p>
+        <a href="tel:+14031234567" class="footer-link">(403) 123-4567</a>
+        <a href="mailto:info@pinnaclerenovations.ca" class="footer-link">info@pinnaclerenovations.ca</a>
+        <span class="footer-link" style="cursor:default;">123 Renovation Way SW, Calgary</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+      <span style="font-family:'Inter',sans-serif;font-size:0.6875rem;font-weight:300;color:rgba(255,255,255,0.18);letter-spacing:0.05em;">
+        <span class="t-en">© 2024 Pinnacle Renovations Ltd.</span>
+        <span class="t-zh">© 2024 Pinnacle Renovations Ltd. 版權所有</span>
+      </span>
+      <div class="flex gap-6">
+        <a href="#" class="footer-link" style="font-size:0.6875rem;"><span class="t-en">Privacy</span><span class="t-zh">私隱政策</span></a>
+        <a href="#" class="footer-link" style="font-size:0.6875rem;"><span class="t-en">Terms</span><span class="t-zh">服務條款</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="lang.js"></script>
+<script>
+  /* Desktop nav visibility handled by CSS media query */
+
+  const nav = document.getElementById('nav');
+  nav.classList.add('scrolled');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  document.getElementById('menu-toggle').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+  document.getElementById('menu-close').addEventListener('click',  () => document.getElementById('mobile-menu').classList.remove('open'));
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open')));
+
+  /* Today's hours */
+  const today = new Date().getDay();
+  document.querySelectorAll('.hours-row').forEach(row => {
+    if (parseInt(row.dataset.day) === today) row.classList.add('today');
+  });
+
+  /* Form */
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valid = true;
+    this.querySelectorAll('[required]').forEach(f => {
+      const bad = f.type === 'checkbox' ? !f.checked : !f.value.trim();
+      f.style.borderColor = bad ? '#C05050' : '';
+      if (bad) valid = false;
+    });
+    if (!valid) { document.getElementById('form-error').style.display = 'block'; return; }
+    document.getElementById('form-error').style.display = 'none';
+    document.getElementById('form-success').classList.add('show');
+    this.querySelectorAll('input,select,textarea,button').forEach(f => f.disabled = true);
+    this.querySelector('button[type="submit"]').style.opacity = '0.4';
+  });
+  document.querySelectorAll('.field').forEach(f => f.addEventListener('input', () => f.style.borderColor = ''));
+
+  /* Fade-in */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

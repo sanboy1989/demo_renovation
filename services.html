@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services &amp; Portfolio — Pinnacle Renovations</title>
+  <meta name="description" content="Kitchen, bathroom, basement, flooring and full-home renovations in Calgary." />
+
+  <script>(function(){var l=localStorage.getItem('pinnacle-lang');if(l==='zh')document.documentElement.classList.add('lang-zh');})();</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:'#FAFAF9', paper:'#F3F1ED', fog:'#E6E3DD',
+            ash:'#B8B4AD', muted:'#7A7672', carbon:'#3C3A38',
+            ink:'#1A1918', gold:'#C4A882'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" class="px-8 md:px-12 scrolled">
+  <div class="wrap flex items-center justify-between w-full">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Pinnacle</span>
+      <span class="nav-logo-sub"><span class="t-en">Renovations · Calgary</span><span class="t-zh">卓越裝修 · 卡加利</span></span>
+    </a>
+    <div id="desktop-nav">
+      <a href="index.html" class="nav-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+      <a href="services.html" class="nav-link active"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+      <a href="contact.html" class="nav-link"><span class="t-en">Contact</span><span class="t-zh">聯絡我們</span></a>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+      <a href="contact.html" class="btn btn-ink" style="padding:0.6rem 1.4rem;">
+        <span class="t-en">Free Quote</span><span class="t-zh">免費報價</span>
+      </a>
+    </div>
+    <button class="hamburger" id="menu-toggle" aria-label="Menu">
+      <span class="hb"></span><span class="hb"></span><span class="hb" style="width:16px;"></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <button id="menu-close" class="absolute top-6 right-8" style="background:none;border:none;cursor:pointer;" aria-label="Close">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1918" stroke-width="1.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="index.html" class="mob-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+  <a href="services.html" class="mob-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+  <a href="contact.html" class="mob-link"><span class="t-en">Contact</span><span class="t-zh">聯絡我們</span></a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+  </div>
+  <a href="contact.html" class="btn btn-ink" style="margin-top:0.5rem;">
+    <span class="t-en">Free Quote</span><span class="t-zh">免費報價</span>
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE HEADER
+══════════════════════════════════════ -->
+<header style="padding-top:10rem; padding-bottom:5rem; background:var(--paper);">
+  <div class="wrap">
+    <div class="grid md:grid-cols-2 gap-12 items-end">
+      <div>
+        <p class="lbl" style="margin-bottom:1.5rem;">
+          <span class="t-en">Services &amp; Portfolio</span>
+          <span class="t-zh">服務與作品集</span>
+        </p>
+        <h1 class="display-xl" style="color:var(--ink);">
+          <span class="t-en">Every Space,<br/><em>Reimagined</em></span>
+          <span class="t-zh">每個空間<br/><em style="font-style:normal;">重新演繹</em></span>
+        </h1>
+      </div>
+      <div>
+        <div class="rule" style="margin-bottom:1.5rem;"></div>
+        <p class="body-text t-en">From a single room to a complete whole-home transformation — Pinnacle brings the same precision and care to every project.</p>
+        <p class="body-zh t-zh">無論是單一房間還是整屋全面翻新，Pinnacle 以同等精工對待每個項目。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     SERVICES — TABS
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="wrap">
+
+    <div class="flex items-center justify-between mb-12 fade-in">
+      <p class="lbl"><span class="t-en">What We Offer</span><span class="t-zh">我們的服務</span></p>
+    </div>
+
+    <!-- Tab bar -->
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; border-bottom:1px solid var(--fog); margin-bottom:4rem;" class="fade-in" id="stab-bar">
+      <button class="stab active" data-tab="kitchen"><span class="t-en">Kitchen</span><span class="t-zh">廚房</span></button>
+      <button class="stab" data-tab="bathroom"><span class="t-en">Bathroom</span><span class="t-zh">浴室</span></button>
+      <button class="stab" data-tab="basement"><span class="t-en">Basement</span><span class="t-zh">地下室</span></button>
+      <button class="stab" data-tab="fullhome"><span class="t-en">Full Home</span><span class="t-zh">整屋</span></button>
+      <button class="stab" data-tab="flooring"><span class="t-en">Flooring</span><span class="t-zh">地板</span></button>
+      <button class="stab" data-tab="painting"><span class="t-en">Painting</span><span class="t-zh">油漆</span></button>
+    </div>
+
+    <!-- ── Kitchen ── -->
+    <div class="spanel active" id="panel-kitchen">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="lbl" style="margin-bottom:1.5rem;"><span class="t-en">Kitchen Renovation</span><span class="t-zh">廚房翻新</span></p>
+          <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+            <span class="t-en">The Heart of Your Home, Perfected</span>
+            <span class="t-zh">家的靈魂，完美呈現</span>
+          </h2>
+          <div class="rule"></div>
+          <p class="body-text t-en" style="margin-bottom:1.5rem;">We design and build kitchens that balance beauty and function — from custom cabinetry and premium countertops to plumbing, electrical, and flooring.</p>
+          <p class="body-zh t-zh" style="margin-bottom:1.5rem;">我們設計並建造兼具美觀與實用的廚房。從訂製木柜到高端台面，再到水喉、電氣及地板——一切細節由我們一手包辦。</p>
+
+          <div style="border-top:1px solid var(--fog); padding-top:1.5rem; margin-bottom:1.5rem; display:flex; flex-direction:column; gap:0.875rem;">
+            <div class="flex items-start gap-3">
+              <span style="color:var(--gold); font-size:0.75rem; margin-top:2px;">—</span>
+              <span class="body-text t-en" style="font-size:0.875rem;">Custom &amp; semi-custom cabinet design and installation</span>
+              <span class="body-zh t-zh" style="font-size:0.875rem;">訂製及半訂製木柜設計及安裝</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span style="color:var(--gold); font-size:0.75rem; margin-top:2px;">—</span>
+              <span class="body-text t-en" style="font-size:0.875rem;">Quartz, granite &amp; marble countertop fabrication</span>
+              <span class="body-zh t-zh" style="font-size:0.875rem;">石英石、花崗岩及雲石台面製作</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span style="color:var(--gold); font-size:0.75rem; margin-top:2px;">—</span>
+              <span class="body-text t-en" style="font-size:0.875rem;">Open-concept layout reconfiguration</span>
+              <span class="body-zh t-zh" style="font-size:0.875rem;">開放式廚房設計改造</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span style="color:var(--gold); font-size:0.75rem; margin-top:2px;">—</span>
+              <span class="body-text t-en" style="font-size:0.875rem;">Premium backsplash tile &amp; appliance integration</span>
+              <span class="body-zh t-zh" style="font-size:0.875rem;">高端廚房磁磚及電器整合</span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:2.5rem; margin-bottom:2rem;">
+            <div>
+              <div class="display-md" style="color:var(--ink); font-size:1.75rem;">$25K–$80K</div>
+              <p class="lbl" style="margin-top:4px;"><span class="t-en">Typical Range</span><span class="t-zh">典型價格範圍</span></p>
+            </div>
+            <div class="rule-v"></div>
+            <div>
+              <div class="display-md" style="color:var(--ink); font-size:1.75rem;">3–8 <span style="font-size:1.25rem;"><span class="t-en">Weeks</span><span class="t-zh">週</span></span></div>
+              <p class="lbl" style="margin-top:4px;"><span class="t-en">Timeline</span><span class="t-zh">施工週期</span></p>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-ink"><span class="t-en">Get a Kitchen Quote</span><span class="t-zh">索取廚房報價</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;" alt="" />
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:3rem;" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Bathroom ── -->
+    <div class="spanel" id="panel-bathroom">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="lbl" style="margin-bottom:1.5rem;"><span class="t-en">Bathroom Remodel</span><span class="t-zh">浴室改造</span></p>
+          <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+            <span class="t-en">Your Personal Sanctuary</span>
+            <span class="t-zh">您的私人天地</span>
+          </h2>
+          <div class="rule"></div>
+          <p class="body-text t-en" style="margin-bottom:1.5rem;">From powder rooms to luxurious master ensuites — heated floors, custom vanities, frameless showers, every element crafted to last.</p>
+          <p class="body-zh t-zh" style="margin-bottom:1.5rem;">從半浴室到豪華主人套廁——暖地板、訂製梳妝台、無框淋浴間，每個元素精心製作，經久耐用。</p>
+          <div style="border-top:1px solid var(--fog); padding-top:1.5rem; margin-bottom:1.5rem; display:flex; flex-direction:column; gap:0.875rem;">
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Full ensuite &amp; powder room renovations</span><span class="body-zh t-zh" style="font-size:0.875rem;">主人套廁及半浴室全面翻新</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Heated floor systems (Schluter / nuheat)</span><span class="body-zh t-zh" style="font-size:0.875rem;">地暖系統安裝（Schluter / nuheat）</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Freestanding soaker tubs &amp; frameless glass showers</span><span class="body-zh t-zh" style="font-size:0.875rem;">獨立浴缸及無框玻璃淋浴間</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Full tile &amp; stone installation</span><span class="body-zh t-zh" style="font-size:0.875rem;">全面磁磚及石材鋪設</span></div>
+          </div>
+          <div style="display:flex;gap:2.5rem;margin-bottom:2rem;">
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">$12K–$45K</div><p class="lbl" style="margin-top:4px;"><span class="t-en">Typical Range</span><span class="t-zh">典型價格範圍</span></p></div>
+            <div class="rule-v"></div>
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">2–5 <span style="font-size:1.25rem;"><span class="t-en">Weeks</span><span class="t-zh">週</span></span></div><p class="lbl" style="margin-top:4px;"><span class="t-en">Timeline</span><span class="t-zh">施工週期</span></p></div>
+          </div>
+          <a href="contact.html" class="btn btn-ink"><span class="t-en">Get a Bathroom Quote</span><span class="t-zh">索取浴室報價</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;" alt="" />
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:3rem;" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Basement ── -->
+    <div class="spanel" id="panel-basement">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="lbl" style="margin-bottom:1.5rem;"><span class="t-en">Basement Development</span><span class="t-zh">地下室開發</span></p>
+          <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+            <span class="t-en">Unlock Hidden Potential</span>
+            <span class="t-zh">發掘隱藏的潛力</span>
+          </h2>
+          <div class="rule"></div>
+          <p class="body-text t-en" style="margin-bottom:1.5rem;">A finished basement adds significant value and livable space. Legal suites, home theatres, gyms — built to city code.</p>
+          <p class="body-zh t-zh" style="margin-bottom:1.5rem;">完善的地下室大幅提升物業價值及可用面積。合法套房、家庭影院、健身室——按卡加利市建築規範施工。</p>
+          <div style="border-top:1px solid var(--fog);padding-top:1.5rem;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.875rem;">
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Legal secondary &amp; in-law suites</span><span class="body-zh t-zh" style="font-size:0.875rem;">合法附屬套房及家庭套房</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Home theatres &amp; recreation rooms</span><span class="body-zh t-zh" style="font-size:0.875rem;">家庭影院及娛樂室</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Framing, insulation, drywall &amp; full finishing</span><span class="body-zh t-zh" style="font-size:0.875rem;">框架、隔熱、石膏板及精裝修</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">City of Calgary permit acquisition</span><span class="body-zh t-zh" style="font-size:0.875rem;">代辦卡加利市建築許可證</span></div>
+          </div>
+          <div style="display:flex;gap:2.5rem;margin-bottom:2rem;">
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">$30K–$90K</div><p class="lbl" style="margin-top:4px;"><span class="t-en">Typical Range</span><span class="t-zh">典型價格範圍</span></p></div>
+            <div class="rule-v"></div>
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">6–12 <span style="font-size:1.25rem;"><span class="t-en">Weeks</span><span class="t-zh">週</span></span></div><p class="lbl" style="margin-top:4px;"><span class="t-en">Timeline</span><span class="t-zh">施工週期</span></p></div>
+          </div>
+          <a href="contact.html" class="btn btn-ink"><span class="t-en">Get a Basement Quote</span><span class="t-zh">索取地下室報價</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;" alt="" />
+          <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:3rem;" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Full Home ── -->
+    <div class="spanel" id="panel-fullhome">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="lbl" style="margin-bottom:1.5rem;"><span class="t-en">Full Home Renovation</span><span class="t-zh">整屋翻新</span></p>
+          <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+            <span class="t-en">A Complete Transformation</span>
+            <span class="t-zh">由裡到外，煥然一新</span>
+          </h2>
+          <div class="rule"></div>
+          <p class="body-text t-en" style="margin-bottom:1.5rem;">Every trade coordinated under one project manager. One point of contact, one timeline, zero surprises.</p>
+          <p class="body-zh t-zh" style="margin-bottom:1.5rem;">由專屬項目經理統籌所有工種。一個聯絡人、一個時間表、零意外。</p>
+          <div style="border-top:1px solid var(--fog);padding-top:1.5rem;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.875rem;">
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Single dedicated project manager</span><span class="body-zh t-zh" style="font-size:0.875rem;">專屬項目經理全程跟進</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Structural modifications &amp; layout redesign</span><span class="body-zh t-zh" style="font-size:0.875rem;">結構改造及平面佈局重新設計</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Interior design consultation included</span><span class="body-zh t-zh" style="font-size:0.875rem;">附設室內設計諮詢服務</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">All permits managed end-to-end</span><span class="body-zh t-zh" style="font-size:0.875rem;">全程管理許可證申請</span></div>
+          </div>
+          <div style="display:flex;gap:2.5rem;margin-bottom:2rem;">
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">$80K+</div><p class="lbl" style="margin-top:4px;"><span class="t-en">Starting From</span><span class="t-zh">起步價格</span></p></div>
+            <div class="rule-v"></div>
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">10–20 <span style="font-size:1.25rem;"><span class="t-en">Weeks</span><span class="t-zh">週</span></span></div><p class="lbl" style="margin-top:4px;"><span class="t-en">Timeline</span><span class="t-zh">施工週期</span></p></div>
+          </div>
+          <a href="contact.html" class="btn btn-ink"><span class="t-en">Discuss Your Project</span><span class="t-zh">與我們討論項目</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;" alt="" />
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:3rem;" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Flooring ── -->
+    <div class="spanel" id="panel-flooring">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="lbl" style="margin-bottom:1.5rem;"><span class="t-en">Flooring</span><span class="t-zh">地板安裝</span></p>
+          <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+            <span class="t-en">The Foundation of Every Room</span>
+            <span class="t-zh">每個美好空間的根基</span>
+          </h2>
+          <div class="rule"></div>
+          <p class="body-text t-en" style="margin-bottom:1.5rem;">The right floor sets the tone for everything above it. Hardwood, LVP, tile, carpet — precision finishing that lasts decades.</p>
+          <p class="body-zh t-zh" style="margin-bottom:1.5rem;">合適的地板為整個空間奠定基調。實木、LVP、磁磚、地毯——精細施工，持久耐用數十年。</p>
+          <div style="border-top:1px solid var(--fog);padding-top:1.5rem;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.875rem;">
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Solid &amp; engineered hardwood</span><span class="body-zh t-zh" style="font-size:0.875rem;">實木及工程實木地板</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Luxury vinyl plank (LVP)</span><span class="body-zh t-zh" style="font-size:0.875rem;">豪華乙烯基板材（LVP）</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Porcelain &amp; ceramic tile</span><span class="body-zh t-zh" style="font-size:0.875rem;">瓷磚及陶瓷磚鋪設</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Subfloor repair &amp; levelling</span><span class="body-zh t-zh" style="font-size:0.875rem;">地基修復及找平處理</span></div>
+          </div>
+          <div style="display:flex;gap:2.5rem;margin-bottom:2rem;">
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">$6K–$25K</div><p class="lbl" style="margin-top:4px;"><span class="t-en">Typical Range</span><span class="t-zh">典型價格範圍</span></p></div>
+            <div class="rule-v"></div>
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">1–2 <span style="font-size:1.25rem;"><span class="t-en">Weeks</span><span class="t-zh">週</span></span></div><p class="lbl" style="margin-top:4px;"><span class="t-en">Timeline</span><span class="t-zh">施工週期</span></p></div>
+          </div>
+          <a href="contact.html" class="btn btn-ink"><span class="t-en">Get a Flooring Quote</span><span class="t-zh">索取地板報價</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1581275233798-60e69fc2d937?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;" alt="" />
+          <img src="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:3rem;" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Painting ── -->
+    <div class="spanel" id="panel-painting">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="lbl" style="margin-bottom:1.5rem;"><span class="t-en">Painting &amp; Finishing</span><span class="t-zh">油漆及修飾</span></p>
+          <h2 class="display-lg" style="color:var(--ink); margin-bottom:1.25rem;">
+            <span class="t-en">The Finishing Touch</span>
+            <span class="t-zh">完美的最後一筆</span>
+          </h2>
+          <div class="rule"></div>
+          <p class="body-text t-en" style="margin-bottom:1.5rem;">Flawless, even coverage every time. Meticulous prep, premium paints, and we leave your home immaculate.</p>
+          <p class="body-zh t-zh" style="margin-bottom:1.5rem;">每次均呈現完美均勻的塗層。細心準備底層、使用頂級油漆，完工後保持家居一塵不染。</p>
+          <div style="border-top:1px solid var(--fog);padding-top:1.5rem;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.875rem;">
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Interior painting — walls, ceilings, trim</span><span class="body-zh t-zh" style="font-size:0.875rem;">室內油漆——牆身、天花、線腳</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Cabinet painting &amp; refinishing</span><span class="body-zh t-zh" style="font-size:0.875rem;">木柜上漆及翻新</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Drywall repair, patching &amp; skim coat</span><span class="body-zh t-zh" style="font-size:0.875rem;">石膏板修補及批盪</span></div>
+            <div class="flex items-start gap-3"><span style="color:var(--gold);font-size:0.75rem;margin-top:2px;">—</span><span class="body-text t-en" style="font-size:0.875rem;">Colour consultation available</span><span class="body-zh t-zh" style="font-size:0.875rem;">提供專業色彩配搭諮詢</span></div>
+          </div>
+          <div style="display:flex;gap:2.5rem;margin-bottom:2rem;">
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">$2K–$12K</div><p class="lbl" style="margin-top:4px;"><span class="t-en">Typical Range</span><span class="t-zh">典型價格範圍</span></p></div>
+            <div class="rule-v"></div>
+            <div><div class="display-md" style="color:var(--ink);font-size:1.75rem;">3–7 <span style="font-size:1.25rem;"><span class="t-en">Days</span><span class="t-zh">天</span></span></div><p class="lbl" style="margin-top:4px;"><span class="t-en">Timeline</span><span class="t-zh">施工週期</span></p></div>
+          </div>
+          <a href="contact.html" class="btn btn-ink"><span class="t-en">Get a Painting Quote</span><span class="t-zh">索取油漆報價</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;" alt="" />
+          <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=600&q=80&auto=format&fit=crop" style="width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:3rem;" alt="" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PORTFOLIO — B/A GRID
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--paper);">
+  <div class="wrap-wide">
+
+    <div class="wrap mb-14 fade-in">
+      <p class="lbl" style="margin-bottom:1.25rem;"><span class="t-en">Our Portfolio</span><span class="t-zh">作品集</span></p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <h2 class="display-lg" style="color:var(--ink);">
+          <span class="t-en">Before &amp; After</span>
+          <span class="t-zh">改造前後對比</span>
+        </h2>
+        <p class="body-text t-en" style="max-width:300px; font-size:0.8125rem;">Every image is a real Pinnacle transformation. Tap to toggle.</p>
+        <p class="body-zh t-zh" style="max-width:300px; font-size:0.8125rem;">每張圖片均為真實改造案例。點擊切換前後對比。</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-px" style="background:var(--fog);">
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=75&auto=format&fit=crop" alt="" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=75&auto=format&fit=crop" alt="" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.25rem;">
+          <p class="lbl" style="margin-bottom:0.375rem;"><span class="t-en">Kitchen — Tuscany NW</span><span class="t-zh">廚房 — 西北 Tuscany</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">White oak cabinetry, waterfall quartz island.</span><span class="t-zh">白橡木柜、瀑布式石英石廚島。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=75&auto=format&fit=crop" alt="" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=75&auto=format&fit=crop" alt="" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.25rem;">
+          <p class="lbl" style="margin-bottom:0.375rem;"><span class="t-en">Ensuite — Aspen SW</span><span class="t-zh">套廁 — 西南 Aspen</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Marble, heated floors, frameless glass shower.</span><span class="t-zh">雲石、暖地板、無框玻璃淋浴間。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=75&auto=format&fit=crop" alt="" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=75&auto=format&fit=crop" alt="" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.25rem;">
+          <p class="lbl" style="margin-bottom:0.375rem;"><span class="t-en">Living Room — Bridgeland NE</span><span class="t-zh">客廳 — 東北 Bridgeland</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Wall removal, hardwood, fireplace.</span><span class="t-zh">拆牆、實木地板、壁爐。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&q=75&auto=format&fit=crop" alt="" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=75&auto=format&fit=crop" alt="" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.25rem;">
+          <p class="lbl" style="margin-bottom:0.375rem;"><span class="t-en">Legal Suite — Killarney SW</span><span class="t-zh">合法套房 — 西南 Killarney</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Full secondary suite, separate entrance.</span><span class="t-zh">完整附屬套房，設獨立入口。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=75&auto=format&fit=crop" alt="" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=75&auto=format&fit=crop" alt="" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.25rem;">
+          <p class="lbl" style="margin-bottom:0.375rem;"><span class="t-en">Full Reno — Mahogany SE</span><span class="t-zh">整屋翻新 — 東南 Mahogany</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Kitchen, 2 bathrooms, flooring, basement.</span><span class="t-zh">廚房、兩個浴室、地板及地下室。</span></p>
+        </div>
+      </div>
+
+      <div class="fade-in" style="background:var(--paper);">
+        <div class="ba-wrap" onclick="toggleBA(this)" style="aspect-ratio:4/3;">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=75&auto=format&fit=crop" alt="" />
+          <img class="ba-after"  src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=75&auto=format&fit=crop" alt="" />
+          <span class="ba-label"><span class="t-en">Before</span><span class="t-zh">改造前</span></span>
+          <span class="ba-hint"><span class="t-en">Tap</span><span class="t-zh">點擊</span></span>
+        </div>
+        <div style="padding:1.25rem;">
+          <p class="lbl" style="margin-bottom:0.375rem;"><span class="t-en">Bedroom — Panorama Hills NW</span><span class="t-zh">臥室 — 西北 Panorama Hills</span></p>
+          <p class="body-text" style="font-size:0.8125rem;"><span class="t-en">Walk-in closet, feature wall, LVP flooring.</span><span class="t-zh">步入式衣帽間、特色牆、LVP 地板。</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PROCESS
+══════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="wrap">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 fade-in">
+      <div>
+        <p class="lbl" style="margin-bottom:1.25rem;"><span class="t-en">Our Process</span><span class="t-zh">我們的流程</span></p>
+        <h2 class="display-lg" style="color:var(--ink);">
+          <span class="t-en">How We Work</span>
+          <span class="t-zh">我們如何工作</span>
+        </h2>
+      </div>
+      <p class="body-text t-en" style="max-width:320px; font-size:0.875rem;">Transparent, collaborative — from the first call to the final walkthrough.</p>
+      <p class="body-zh t-zh" style="max-width:320px; font-size:0.875rem;">全程透明合作，從第一次電話到最後驗收。</p>
+    </div>
+
+    <div style="border-top:1px solid var(--fog);">
+      <div class="grid md:grid-cols-4">
+        <div class="fade-in" style="padding:2.5rem 2rem 2.5rem 0; border-right:1px solid var(--fog);">
+          <span class="step-num">01</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin:1rem 0 0.75rem;">
+            <span class="t-en">Consultation</span><span class="t-zh">免費諮詢</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">We visit, listen, measure, and discuss your vision, budget, and timeline.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">上門拜訪，聆聽設想，量度尺寸，討論預算及時間表。</p>
+        </div>
+        <div class="fade-in" style="padding:2.5rem 2rem; border-right:1px solid var(--fog);">
+          <span class="step-num">02</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin:1rem 0 0.75rem;">
+            <span class="t-en">Design &amp; Quote</span><span class="t-zh">設計與報價</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">Detailed design concepts and a written quote — no hidden fees, ever.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">詳細設計方案及書面報價，絕無任何隱藏費用。</p>
+        </div>
+        <div class="fade-in" style="padding:2.5rem 2rem; border-right:1px solid var(--fog);">
+          <span class="step-num">03</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin:1rem 0 0.75rem;">
+            <span class="t-en">Construction</span><span class="t-zh">施工建造</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">Skilled trades begin on schedule. Daily updates keep you fully informed.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">技術團隊按計劃開工，每日進度更新讓您全程知悉。</p>
+        </div>
+        <div class="fade-in" style="padding:2.5rem 0 2.5rem 2rem;">
+          <span class="step-num">04</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin:1rem 0 0.75rem;">
+            <span class="t-en">Walkthrough</span><span class="t-zh">交付驗收</span>
+          </h3>
+          <p class="body-text t-en" style="font-size:0.875rem;">We review every detail together. Nothing closes until you're completely satisfied.</p>
+          <p class="body-zh t-zh" style="font-size:0.875rem;">逐一審視每個細節，直到您完全滿意才算完工。</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--fog);"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="section-sm" style="background:var(--ink);">
+  <div class="wrap-narrow text-center fade-in">
+    <h2 class="display-lg" style="color:white; margin-bottom:1rem;">
+      <span class="t-en">Ready to Begin?</span>
+      <span class="t-zh">準備開始了嗎？</span>
+    </h2>
+    <p class="body-text t-en" style="color:rgba(255,255,255,0.38); margin-bottom:2rem;">Contact us for a free, no-obligation quote.</p>
+    <p class="body-zh t-zh" style="color:rgba(255,255,255,0.38); margin-bottom:2rem;">聯絡我們，獲取免費無壓力報價。</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html" class="btn btn-white"><span class="t-en">Free Consultation</span><span class="t-zh">免費諮詢</span></a>
+      <a href="tel:+14031234567" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);"><span class="t-en">(403) 123-4567</span><span class="t-zh">致電 (403) 123-4567</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="padding:4rem 0 2.5rem; border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="wrap">
+    <div class="grid md:grid-cols-3 gap-12 mb-10">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.125rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:white;margin-bottom:4px;">Pinnacle Renovations</div>
+        <div style="font-family:'Inter',sans-serif;font-size:0.4375rem;font-weight:500;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1rem;"><span class="t-en">Renovations · Calgary, Alberta</span><span class="t-zh">卓越裝修 · 卡加利</span></div>
+        <p class="body-text t-en" style="color:rgba(255,255,255,0.28);font-size:0.8125rem;">Transforming Calgary homes since 2012.</p>
+        <p class="body-zh t-zh" style="color:rgba(255,255,255,0.28);font-size:0.8125rem;line-height:1.9;">自2012年改造卡加利家居。</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="lbl" style="color:rgba(255,255,255,0.18);margin-bottom:0.25rem;"><span class="t-en">Pages</span><span class="t-zh">頁面</span></p>
+        <a href="index.html" class="footer-link"><span class="t-en">Home</span><span class="t-zh">主頁</span></a>
+        <a href="services.html" class="footer-link"><span class="t-en">Services &amp; Portfolio</span><span class="t-zh">服務與作品集</span></a>
+        <a href="contact.html" class="footer-link"><span class="t-en">Contact Us</span><span class="t-zh">聯絡我們</span></a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="lbl" style="color:rgba(255,255,255,0.18);margin-bottom:0.25rem;"><span class="t-en">Contact</span><span class="t-zh">聯絡資訊</span></p>
+        <a href="tel:+14031234567" class="footer-link">(403) 123-4567</a>
+        <a href="mailto:info@pinnaclerenovations.ca" class="footer-link">info@pinnaclerenovations.ca</a>
+        <span class="footer-link" style="cursor:default;">123 Renovation Way SW, Calgary</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+      <span style="font-family:'Inter',sans-serif;font-size:0.6875rem;font-weight:300;color:rgba(255,255,255,0.18);letter-spacing:0.05em;">
+        <span class="t-en">© 2024 Pinnacle Renovations Ltd.</span>
+        <span class="t-zh">© 2024 Pinnacle Renovations Ltd. 版權所有</span>
+      </span>
+      <div class="flex gap-6">
+        <a href="#" class="footer-link" style="font-size:0.6875rem;"><span class="t-en">Privacy</span><span class="t-zh">私隱政策</span></a>
+        <a href="#" class="footer-link" style="font-size:0.6875rem;"><span class="t-en">Terms</span><span class="t-zh">服務條款</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="lang.js"></script>
+<script>
+  /* Desktop nav visibility handled by CSS media query */
+
+  const nav = document.getElementById('nav');
+  nav.classList.add('scrolled');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  document.getElementById('menu-toggle').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+  document.getElementById('menu-close').addEventListener('click',  () => document.getElementById('mobile-menu').classList.remove('open'));
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open')));
+
+  /* Service tabs */
+  document.querySelectorAll('.stab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.spanel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  function toggleBA(el) {
+    el.classList.toggle('after');
+    const lbl = el.querySelector('.ba-label');
+    if (lbl) lbl.innerHTML = el.classList.contains('after')
+      ? '<span class="t-en">After</span><span class="t-zh">改造後</span>'
+      : '<span class="t-en">Before</span><span class="t-zh">改造前</span>';
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
